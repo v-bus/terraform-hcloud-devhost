@@ -1,3 +1,11 @@
+variable "vps" {
+description = "list of maps with hostname and ips" 
+default = [
+				{"name" = "localhost"
+				 "ipv4_address" = "127.0.0.1"
+				},
+				] 
+} 
 variable "dns_dev_zone" {
     description	 = "public DNS zone" 
     default			 = "dev.yourdomain.net."
