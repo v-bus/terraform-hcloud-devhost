@@ -18,13 +18,14 @@ data "aws_route53_zone" "dns_dev_zone" {
 resource "aws_route53_record" "aws_dev_record" {
 #################################################
 # create count number of FQDN for developer's VPS
-#################################################  
+################################################# 
+  depends_on  = [var.vps] 
   count       = length(var.vps)
   zone_id     = data.aws_route53_zone.dns_dev_zone.zone_id
-  name        = "${var.vps[count.index].name}.${data.aws_route53_zone.dns_dev_zone.name}"
+  name        = "${keys(var.vps)[count.index]}.${data.aws_route53_zone.dns_dev_zone.name}"
   type        = "A"
   ttl         =  "300"
   records     = [
-                var.vps[count.index].ipv4_address
+                values(var.vps)[count.index]
             ]
 }
