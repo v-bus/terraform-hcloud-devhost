@@ -5,13 +5,12 @@ provider "hcloud" {
   token = var.hcloud_token
 }
 locals {
-  devs = flatten([                                                                                                               # template begining          
-            for k in range(length(var.vps_list)) :                                                                            # OS's names loop
+  devs = flatten([ 
+            for k in range(length(var.vps_list)) :
                     [
-                                                                                                                                # generate host pairs { "hostname" = "dev61-username", "os" = "ubuntu" } 
                     for i in range(values(var.vps_list)[k]) : jsondecode(<<EOT
                                                                                 {
-                                                                                    "hostname" : "dev${k}${i}-${var.your_login}",
+                                                                                    "hostname" : "dev${k}${i}-${var.dev_user}",
                                                                                     "os"    : "${keys(var.vps_list)[k]}"
                                                                                 } 
                                                                             EOT

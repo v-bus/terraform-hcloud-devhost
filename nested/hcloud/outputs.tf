@@ -1,4 +1,5 @@
 output "dev_vps" {
-  value = {
-            hcloud_server.dev_vps.*.name =  hcloud_server.dev_vps.*.ipv4_address                     	} 
+  # value = jsondecode(
+    value = {for host in hcloud_server.dev_vps : host.name => host.ipv4_address}
+          
 }
