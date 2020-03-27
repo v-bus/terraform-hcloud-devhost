@@ -12,3 +12,10 @@ module "dns" {
   aws_secret_key = var.aws_secret_key
   dns_dev_zone   = var.dns_dev_zone
 }
+terraform {
+    required_version = ">= 0.12"
+    required_providers {
+                    aws = "~> 2.54"
+                    hcloud = "~> 1.15"
+                    }
+}
