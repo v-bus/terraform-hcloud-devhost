@@ -1,3 +1,11 @@
+terraform {
+    required_version = ">= 0.12"
+    required_providers {
+                    aws = "~> 2.54"
+                    hcloud = "~> 1.15"
+                    }
+}
+
 module "vps" {
   source       = "./modules/hcloud"
   vps_list     = var.vps_list
