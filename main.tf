@@ -19,4 +19,5 @@ module "dns" {
   aws_access_key = var.aws_access_key
   aws_secret_key = var.aws_secret_key
   dns_dev_zone   = var.dns_dev_zone
+  aws_depends_on = [module.vps]
 }
