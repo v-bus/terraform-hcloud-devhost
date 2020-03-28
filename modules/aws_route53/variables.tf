@@ -18,3 +18,8 @@ variable "aws_access_key" {
 variable "aws_secret_key" {
  description = "required: AWS Secret Key" 
 }
+variable "aws_depends_on" {
+  description = "required: sould point to another submodule (https://discuss.hashicorp.com/t/tips-howto-implement-module-depends-on-emulation/2305/2)"
+  type    = any
+  default = null
+}
