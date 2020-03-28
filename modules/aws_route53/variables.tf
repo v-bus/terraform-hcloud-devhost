@@ -1,5 +1,5 @@
 variable "vps" {
- description = "map with hostname and IP {\"name\" = \"ipv4_address\"}" 
+ description = "required: map with hostname and IP {\"name\" = \"ipv4_address\"}" 
  default     = null
 } 
 variable "dns_dev_zone" {
