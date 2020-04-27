@@ -21,6 +21,7 @@ module "hdevs" {
     vps_list        = {"ubuntu_18" = 2}
     dev_user        = "username"
     hcloud_token    = "sdfghj,hgffghjkjhgf"
+    tags            = {"key" = "value"}
 }
 
 output "out" {

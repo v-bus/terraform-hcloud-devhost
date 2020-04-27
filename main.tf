@@ -11,6 +11,7 @@ module "vps" {
   vps_list     = var.vps_list
   dev_user     = var.dev_user
   hcloud_token = var.hcloud_token
+  tags         = var.tags
 }
 
 module "dns" {
