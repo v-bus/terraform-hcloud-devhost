@@ -45,3 +45,7 @@ variable "server_type" {
   description = "hcloud server type"
   default     = "cx11"
 }
+variable "tags" {
+  description = "Tags to VPS. User-defined labels map (key-value pairs)"
+  type = map(string)
+}

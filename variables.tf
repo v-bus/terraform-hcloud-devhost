@@ -28,3 +28,7 @@ variable "dev_user" {
 variable "hcloud_token" {
   description = "Access token to hcloud API"
 }
+variable "tags" {
+  description = "Tags to VPS. User-defined labels map (key-value pairs)"
+  type = map(string)
+}

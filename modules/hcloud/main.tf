@@ -36,5 +36,6 @@ resource "hcloud_server" "dev_vps" {
   server_type = var.server_type
   ssh_keys    = [
                 hcloud_ssh_key.dev_ssh_key.id	
-                ] 
+                ]
+  labels      = var.tags
 }
